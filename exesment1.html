@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="kk"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>ҚазМұра</title> 
+  <link rel="stylesheet" href="styles.css"> 
+ <style type="text/css" id="dcoder_stylesheet">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #0066cc;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.menu-icon span {
+  width: 30px;
+  height: 4px;
+  background: white;
+  margin: 5px 0;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  background: #0066cc;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.menu a:hover {
+  background: #003366;
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+  display: flex;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  display: none;
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  font-size: 28px;
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #003366;
+}</style></head> 
+ <body> <!-- Басты бет --> 
+  <header> 
+   <h1>ҚазМұра</h1> 
+   <p>Бұл сайт қазақ әдебиетін тереңірек зерттеуге және оның мұрасын сақтауға арналған.</p> 
+   <p>Сайттың мақсаты — оқушыларды қазақ әдебиетін толық зерттеуге шақыру.</p> 
+   <input type="checkbox" id="menu-toggle"> <label for="menu-toggle" class="menu-icon"> <span></span> <span></span> <span></span> </label> 
+   <nav class="menu"> <a href="#" onclick="showSection('home')">🏠 Басты бет</a> <a href="#" onclick="showSection('articles')">📝 Мақалалар</a> <a href="#" onclick="showSection('history')">📜 Тарихи деректер</a> <a href="#" onclick="showSection('literature')">📚 Көркем шығармалар</a> <a href="#" onclick="showSection('interviews')">🎙️ Сұхбаттар</a> 
+   </nav> 
+  </header> 
+  <main> <!-- Басты бет бөлімі --> 
+   <section id="home" class="active"> 
+    <h2>Қош келдіңіз!</h2> 
+    <p>Бұл сайт қазақ әдебиетін терең зерттеуге арналған. Мұнда мақалалар, тарихи деректер, көркем шығармалар және сұхбаттар бөлімдері бар.</p> 
+   </section> <!-- Мақала бөлімі --> 
+   <section id="articles"> 
+    <h2>📝 Мақалалар</h2> 
+    <p>Мақалалар бөлімінде қазақ әдебиетіне қатысты мақалалар мен зерттеулерді таба аласыз.</p> <button onclick="addArticle()">Жаңа мақала қосу</button> 
+   </section> <!-- Тарихи деректер бөлімі --> 
+   <section id="history"> 
+    <h2>📜 Тарихи деректер</h2> 
+    <p>Тарихи деректер бөлімінде қазақ әдебиетінің тарихына қатысты қызықты деректер ұсынылады.</p> <button onclick="addHistory()">Жаңа дерек қосу</button> 
+   </section> <!-- Көркем шығармалар бөлімі --> 
+   <section id="literature"> 
+    <h2>📚 Көркем шығармалар</h2> 
+    <p>Көркем шығармалар бөлімінде қазақ жазушыларының шығармалары мен поэзияларын таба аласыз.</p> <button onclick="addLiterature()">Жаңа шығарма қосу</button> 
+   </section> <!-- Сұхбаттар бөлімі --> 
+   <section id="interviews"> 
+    <h2>🎙️ Сұхбаттар</h2> 
+    <p>Сұхбаттар бөлімінде қазақ әдебиетінің көрнекті өкілдерімен сұхбаттарды оқи аласыз.</p> <button onclick="addInterview()">Жаңа сұхбат қосу</button> 
+   </section> 
+  </main> 
+  <footer> 
+   <p>© 2025 Қазақ Әдебиеті. Барлық құқықтар қорғалған.</p> 
+  </footer> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">function showSection(sectionId) {
+  // Барлық секцияларды жасырып тастау
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => section.classList.remove('active'));
+
+  // Таңдалған секцияны көрсету
+  const activeSection = document.getElementById(sectionId);
+  activeSection.classList.add('active');
+}
+
+function addArticle() {
+  alert("Жаңа мақала қосу функциясы әзірленуде.");
+}
+
+function addHistory() {
+  alert("Жаңа тарихи дерек қосу функциясы әзірленуде.");
+}
+
+function addLiterature() {
+  alert("Жаңа көркем шығарма қосу функциясы әзірленуде.");
+}
+
+function addInterview() {
+  alert("Жаңа сұхбат қосу функциясы әзірленуде.");
+}</script></body></html>
