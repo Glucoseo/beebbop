@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="kk"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>ҚазМұра</title> 
+  <link rel="stylesheet" href="styles.css"> 
+ <style type="text/css" id="dcoder_stylesheet">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #0066cc;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.menu-icon span {
+  width: 30px;
+  height: 4px;
+  background: white;
+  margin: 5px 0;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  background: #0066cc;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.menu a:hover {
+  background: #003366;
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+  display: flex;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  display: none;
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  font-size: 28px;
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #003366;
+}</style></head> 
+ <body> <!-- Басты бет --> 
+  <header> 
+   <h1>Қазақ баласы</h1> 
+   <p>Бұрынғы қазақ баласының тәрбие моделі.</p> 
+   <p>Сайттың мақсаты — оқушыларды қазақ әдебиетін толық зерттеуге шақыру.</p> 
+   <input type="checkbox" id="menu-toggle"> <label for="menu-toggle" class="menu-icon"> <span></span> <span></span> <span></span> </label> 
+   <nav class="menu"> <a href="#" onclick="showSection('home')">Басты бет</a> <a href="#" onclick="showSection('articles')">Әжесінің тентегі</a> <a href="#" onclick="showSection('history')">Атасының баласы</a> <a href="#" onclick="showSection('literature')">Анасының жүрегі</a> <a href="#" onclick="showSection('interviews')">Әкесінің тірегі</a> 
+   </nav> 
+  </header> 
+  <main> <!-- Басты бет бөлімі --> 
+   <section id="home" class="active"> 
+    <h2>Қош келдіңіз!</h2> 
+   </section> <!-- Мақала бөлімі --> 
+   <section id="articles"> 
+    <h2>Әжесінің тентегі</h2> 
+    <p> <a href="./img/Әже.docx" >Әжесінің тентегі.</a> </p> 
+   </section> <!-- Тарихи деректер бөлімі --> 
+   <section id="history"> 
+    <h2>Атасының баласы.</h2> 
+    <p><a href="./img/Ата.docx">Атасының баласы</a></p>
+   </section> <!-- Көркем шығармалар бөлімі --> 
+   <section id="literature"> 
+    <h2>Анасының жүрегі</h2> 
+    <p> <a href="./img/Ана.docx">Анасының жүрегі</a></p>
+   </section> <!-- Сұхбаттар бөлімі --> 
+   <section id="interviews"> 
+    <h2>Әкесінің тірегі</h2>
+    <p><a href="./img/Әке.docx">Әкесінің тірегі</a></p>
+   </section> 
+  </main> 
+  <footer> 
+   <p> Сайт құрастырушылары:</p> 
+   <p><a>Уралбай Ранида 7с,Орынбаева Мансура 8д</a></p>
+  </footer> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">function showSection(sectionId) {
+  // Барлық секцияларды жасырып тастау
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => section.classList.remove('active'));
+
+  // Таңдалған секцияны көрсету
+  const activeSection = document.getElementById(sectionId);
+  activeSection.classList.add('active');
+}
+</script></body></html>
